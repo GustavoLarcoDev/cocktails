@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    Cocktail Details
+{% endblock title %}
+{% block content %}
+<header>
+    <nav>
+        <a href="{% url 'recipe_list' %}">Main page</a>
+        <a href="{% url 'edit_coktail' recipe_object.id %}">Edit Coktail</a>
+    </nav>
+    <main>
+        <h1>{{ recipe_object.title }}</h1>
+        <img src={{ recipe_object.imagen.url }} alt="{{ recipe_object.title }}" />
+        <h2>how to do it</h2>
+        <p>{{ recipe_object.description }}<p>
+
+    </main>
+{% endblock content %}

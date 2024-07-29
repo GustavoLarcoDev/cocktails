@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+    Cocktails Recipes
+{% endblock title %}
+
+{% block content %}
+    <header>
+        <nav>
+            <a href="{% url 'recipe_list' %}">Main page</a>
+            <a href="{% url 'create_recipe' %}">Create Coktail</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Blair Recipes</h1>
+        <h2>Drinks property of Blair Spikes</h2>
+        <div class="recipe-grid">
+            {% for recipe in recipe_list %}
+          <div>
+            <h3>
+              <a href="{% url 'show_recipe' recipe.id %}">{{ recipe.title }}</a>
+            </h3>
+            {% comment %} <p>{{ recipe.created_on|date:"D d M Y" }}</p> {% endcomment %}
+            <img src={{ recipe.imagen.url }} alt="{{ recipe.title }}" />
+
+          </div>
+          {% endfor %}
+        </div>
+      </main>
+{% endblock content %}
