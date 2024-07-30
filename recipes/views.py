@@ -3,6 +3,7 @@ from recipes.models import Recipe
 from recipes.forms import RecipeForm
 
 
+
 def create_recipe(request):
     if request.method == "POST":
         form = RecipeForm(request.POST, request.FILES)
