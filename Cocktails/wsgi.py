@@ -15,4 +15,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Cocktails.settings")
 
 application = get_wsgi_application()
 
-app = application 
+from Cocktails.wsgi import Cocktails
+
+application = Cocktails(application)
