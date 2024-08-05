@@ -20,7 +20,7 @@
               <a href="{% url 'show_recipe' recipe.id %}">{{ recipe.title }}</a>
             </h3>
             {% comment %} <p>{{ recipe.created_on|date:"D d M Y" }}</p> {% endcomment %}
-            <img src={{ recipe.imagen.url }} alt="{{ recipe.title }}" />
+            <img src="{{ recipe.imagen.url }}" alt="{{ recipe.title }}" />
 
           </div>
           {% endfor %}
