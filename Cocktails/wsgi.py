@@ -1,16 +1,8 @@
-"""
-WSGI config for Cocktails project.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+from whitenoise import WhiteNoise
 
-For more information on this file, see
-https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
-"""
-
-import os
-
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Cocktails.settings")
+from my_project import MyWSGIApp
 
 application = get_wsgi_application()
+application = WhiteNoise(application, root="/static/")
+application.add_files("/media/cocktails", prefix="Cocktails/")

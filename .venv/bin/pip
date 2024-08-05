@@ -1,4 +1,4 @@
-#!/Users/gustavolarco/Cocktails/.venv/bin/python
+#!/Users/gustavolarco/Recipes/cocktails/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
